@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet, ScrollView } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
-export default function FormularioAdocao() {
+export default function FormularioAdocao({ navigation }) {
   const [nome, setNome] = useState('');
   const [telefone, setTelefone] = useState('');
   const [mensagem, setMensagem] = useState('');
+
+  const route = useRoute();
+  const { nomeAnimal } = route.params || {};
 
   function enviarFormulario() {
     if (!nome || !telefone || !mensagem) {
@@ -14,17 +18,29 @@ export default function FormularioAdocao() {
 
     Alert.alert(
       'Formulário Enviado',
-      `Obrigado por querer adotar, ${nome}! Entraremos em contato pelo número ${telefone}.`
+      `Obrigado por querer adotar ${nomeAnimal || 'um animal'}, ${nome}! Entraremos em contato pelo número ${telefone}.`,
+      [
+        {
+          text: 'OK',
+          onPress: () => {
+            navigation.navigate('Home');
+            setNome('');
+            setTelefone('');
+            setMensagem('');
+          },
+        },
+      ]
     );
-
-    // Limpa os campos após envio
-    setNome('');
-    setTelefone('');
-    setMensagem('');
   }
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      {nomeAnimal && (
+        <Text style={styles.intro}>
+          Você está adotando: <Text style={{ fontWeight: 'bold' }}>{nomeAnimal}</Text>
+        </Text>
+      )}
+
       <Text style={styles.label}>Nome completo:</Text>
       <TextInput
         style={styles.input}
@@ -61,6 +77,12 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#f2f2f2',
     flexGrow: 1,
+  },
+  intro: {
+    fontSize: 16,
+    marginBottom: 20,
+    textAlign: 'center',
+    color: '#444',
   },
   label: {
     fontWeight: 'bold',

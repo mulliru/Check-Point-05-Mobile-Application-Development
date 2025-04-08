@@ -8,14 +8,14 @@ export default function Desenvolvedores() {
 
       <View style={styles.devBox}>
         <Image source={require('../assets/dev1.png')} style={styles.imagem} />
-        <Text style={styles.nome}>Murilo</Text>
+        <Text style={styles.nome}>Murillo</Text>
         <Text style={styles.funcao}>Desenvolvedor Frontend</Text>
       </View>
 
       <View style={styles.devBox}>
         <Image source={require('../assets/dev2.png')} style={styles.imagem} />
-        <Text style={styles.nome}>João</Text>
-        <Text style={styles.funcao}>Designer e Apoio Técnico</Text>
+        <Text style={styles.nome}>Mulliru</Text>
+        <Text style={styles.funcao}>Designer e UX</Text>
       </View>
     </ScrollView>
   );

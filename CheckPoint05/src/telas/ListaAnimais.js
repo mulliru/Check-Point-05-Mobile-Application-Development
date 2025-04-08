@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, ActivityIndicator, StyleSheet, Button } from 'react-native';
 import { buscarAnimais } from '../services/petfinder';
 
-export default function ListaAnimais() {
+export default function ListaAnimais({ navigation }) {
   const [animais, setAnimais] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
@@ -38,6 +38,11 @@ export default function ListaAnimais() {
           )}
           <Text style={styles.nome}>{item.name}</Text>
           <Text style={styles.raca}>{item.breeds.primary}</Text>
+
+          <Button
+            title={`Quero adotar ${item.name}`}
+            onPress={() => navigation.navigate('Formulário', { nomeAnimal: item.name })}
+          />
         </View>
       )}
     />
@@ -64,5 +69,6 @@ const styles = StyleSheet.create({
   raca: {
     fontSize: 16,
     color: '#666',
+    marginBottom: 10,
   },
 });
