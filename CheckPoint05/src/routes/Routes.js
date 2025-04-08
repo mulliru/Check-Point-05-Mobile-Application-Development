@@ -18,7 +18,6 @@ function Tabs() {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Animais" component={ListaAnimais} />
-      <Tab.Screen name="Formulário" component={FormularioAdocao} />
     </Tab.Navigator>
   );
 }
@@ -28,6 +27,7 @@ export default function Routes() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Principal" component={Tabs} options={{ headerShown: false }} />
+        <Stack.Screen name="Formulário de Adoção" component={FormularioAdocao} />
         <Stack.Screen name="Links Úteis" component={LinksUteis} />
         <Stack.Screen name="Desenvolvedores" component={Desenvolvedores} />
       </Stack.Navigator>

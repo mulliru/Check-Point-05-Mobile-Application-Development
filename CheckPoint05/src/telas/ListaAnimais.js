@@ -41,7 +41,7 @@ export default function ListaAnimais({ navigation }) {
 
           <Button
             title={`Quero adotar ${item.name}`}
-            onPress={() => navigation.navigate('Formulário', { nomeAnimal: item.name })}
+            onPress={() => navigation.navigate('Formulário de Adoção', { nomeAnimal: item.name })}
           />
         </View>
       )}
