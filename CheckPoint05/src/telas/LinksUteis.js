@@ -8,22 +8,25 @@ export default function LinksUteis() {
 
       <View style={styles.linkBox}>
         <Button
-          title="AdoteVica - Centro de Adoção "
+          title="AdoteVica - Centro de Adoção"
           onPress={() => Linking.openURL('https://www.instagram.com/adotevica/')}
+          color="#4CAF50"
         />
       </View>
 
       <View style={styles.linkBox}>
         <Button
-          title="instituto.caramelo - Instituto de cuidado animal"
+          title="Instituto Caramelo - Cuidado Animal"
           onPress={() => Linking.openURL('https://amparanimal.org.br')}
+          color="#4CAF50"
         />
       </View>
 
       <View style={styles.linkBox}>
         <Button
-          title="Instituição Cão Sem Dono (SP) "
+          title="Cão Sem Dono (SP)"
           onPress={() => Linking.openURL('https://www.caosemdono.com.br/')}
+          color="#4CAF50"
         />
       </View>
     </ScrollView>
@@ -33,14 +36,15 @@ export default function LinksUteis() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    alignItems: 'stretch',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#F9F9F9',
+    flexGrow: 1,
   },
   titulo: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',
+    color: '#000000',
   },
   linkBox: {
     marginBottom: 15,

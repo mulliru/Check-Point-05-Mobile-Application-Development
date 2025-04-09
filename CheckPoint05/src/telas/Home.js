@@ -13,11 +13,11 @@ export default function Home({ navigation }) {
       <Image source={require('../assets/cachorro1.png')} style={styles.imagem} />
 
       <View style={styles.botao}>
-        <Button title="Links úteis" onPress={() => navigation.navigate('Links Úteis')} />
+        <Button title="Links úteis" onPress={() => navigation.navigate('Links Úteis')} color="#4CAF50" />
       </View>
 
       <View style={styles.botao}>
-        <Button title="Sobre os desenvolvedores" onPress={() => navigation.navigate('Desenvolvedores')} />
+        <Button title="Sobre os desenvolvedores" onPress={() => navigation.navigate('Desenvolvedores')} color="#4CAF50" />
       </View>
     </ScrollView>
   );
@@ -27,19 +27,20 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     alignItems: 'center',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#F9F9F9',
   },
   titulo: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
+    color: '#000000',
   },
   subtitulo: {
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 20,
-    color: '#555',
+    color: '#000000',
   },
   imagem: {
     width: 200,

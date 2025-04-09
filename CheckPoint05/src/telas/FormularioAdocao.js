@@ -23,7 +23,7 @@ export default function FormularioAdocao({ navigation }) {
         {
           text: 'OK',
           onPress: () => {
-            navigation.navigate('Home');
+            navigation.navigate('Principal');
             setNome('');
             setTelefone('');
             setMensagem('');
@@ -47,6 +47,7 @@ export default function FormularioAdocao({ navigation }) {
         value={nome}
         onChangeText={setNome}
         placeholder="Digite seu nome"
+        placeholderTextColor="#888"
       />
 
       <Text style={styles.label}>Telefone:</Text>
@@ -56,6 +57,7 @@ export default function FormularioAdocao({ navigation }) {
         onChangeText={setTelefone}
         placeholder="(11) 99999-9999"
         keyboardType="phone-pad"
+        placeholderTextColor="#888"
       />
 
       <Text style={styles.label}>Por que você quer adotar?</Text>
@@ -65,9 +67,12 @@ export default function FormularioAdocao({ navigation }) {
         onChangeText={setMensagem}
         placeholder="Fale um pouco sobre você..."
         multiline
+        placeholderTextColor="#888"
       />
 
-      <Button title="Enviar" onPress={enviarFormulario} />
+      <View style={styles.botao}>
+        <Button title="Enviar" onPress={enviarFormulario} color="#4CAF50" />
+      </View>
     </ScrollView>
   );
 }
@@ -75,25 +80,30 @@ export default function FormularioAdocao({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#F9F9F9', // fundo da tela
     flexGrow: 1,
   },
   intro: {
     fontSize: 16,
     marginBottom: 20,
     textAlign: 'center',
-    color: '#444',
+    color: '#000000',
   },
   label: {
     fontWeight: 'bold',
     marginTop: 15,
     marginBottom: 5,
+    color: '#000000',
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#CCCCCC',
     borderRadius: 5,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
+    color: '#000000',
+  },
+  botao: {
+    marginTop: 20,
   },
 });
