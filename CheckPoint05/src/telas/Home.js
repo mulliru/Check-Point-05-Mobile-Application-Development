@@ -10,7 +10,7 @@ export default function Home({ navigation }) {
       </Text>
 
       <Image source={require('../assets/logo.png')} style={styles.imagem} />
-      <Image source={require('../assets/cachorro1.png')} style={styles.imagem} />
+      <View style={styles.imagem} />
 
       <View style={styles.botao}>
         <Button title="Links úteis" onPress={() => navigation.navigate('Links Úteis')} color="#4CAF50" />
